@@ -3,7 +3,7 @@ import Link from 'next/link'
 
 export default function Header() {
 	return (
-		<header className="sticky top-0 z-50 bg-gradient-to-r from-white/95 via-indigo-50/95 to-purple-50/95 backdrop-blur-xl border-b border-white/20 shadow-lg shadow-indigo-100/50">
+		<header className="sticky top-0 z-50 bg-gradient-to-r from-purple-100/95 via-indigo-100/95 to-violet-100/95 backdrop-blur-xl border-b border-white/20 shadow-lg shadow-indigo-100/50">
 			<div className="container mx-auto px-4 py-3 sm:py-4">
 				<nav className="flex items-center justify-between">
 					{/* Logo Section */}

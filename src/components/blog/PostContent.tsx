@@ -44,7 +44,7 @@ export default function PostContent({ post }: PostContentProps) {
 					</h1>
 				</div>
 
-				<p className="text-md italic text-gray-500">{post?.body}</p>
+				<p className="text-md italic text-gray-700">{post?.body}</p>
 			</div>
 		</div>
 	)
