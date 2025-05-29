@@ -1,6 +1,6 @@
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
-import { ArrowLeft, User as UserIcon } from 'lucide-react'
+import { ArrowLeft, CircleUserRoundIcon as UserIcon } from 'lucide-react'
 import Link from 'next/link'
 
 import { Post, User } from '@/types/blog'
@@ -16,7 +16,7 @@ export default function PostContent({ post }: PostContentProps) {
 				<Link href="/">
 					<Button
 						variant="ghost"
-						className="mb-4 text-indigo-700 hover:text-indigo-900 transition-colors"
+						className="hover:bg-purple-50 rounded-xl mb-4 text-indigo-700 hover:text-purple-900 transition-all duration-500 ease-in-out"
 					>
 						<ArrowLeft className="h-4 w-4 mr-2" />
 						Back to Posts
@@ -33,8 +33,8 @@ export default function PostContent({ post }: PostContentProps) {
 						Post #{post?.id}
 					</Badge>
 
-					<div className="flex items-center gap-1.5 pt-2 text-sm text-yellow-800">
-						<UserIcon className="h-3 w-3 " />
+					<div className="flex items-center gap-1.5 pt-2 text-sm text-yellow-600">
+						<UserIcon className="h-4 w-4 " />
 						<span>Posted by {post?.user?.name}</span>
 					</div>
 				</div>

@@ -14,7 +14,7 @@ export default async function HomePage() {
 						Welcome to Our Blog
 					</span>
 				</h1>
-				<p className="text-lg text-gray-600 max-w-2xl mx-auto animate-fade-in mb-4 italic ">
+				<p className="text-md text-gray-600 max-w-2xl mx-auto animate-fade-in mb-4 italic ">
 					&quot;Discover the latest insights, tutorials, and stories from our
 					community&quot;
 				</p>

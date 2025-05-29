@@ -3,20 +3,33 @@ import { Comment } from '@/types/blog'
 import { MessageCircle } from 'lucide-react'
 
 interface CommentSectionProps {
-	comments: Comment[]
+	comments: Comment[] // Array of comment objects to display
 }
 
+/**
+ * CommentSection component - Displays a list of comments with avatars and styling
+ * @param {CommentSectionProps} props - Component props
+ * @param {Comment[]} props.comments - Array of comment objects to display
+ * @returns {JSX.Element} - Rendered comment section
+ */
 export default function CommentSection({ comments }: CommentSectionProps) {
-
-
-	// Helper function to get initials
+	/**
+	 * Helper function to generate initials from a name or email
+	 * @param {string} name - The name or email to generate initials from
+	 * @returns {string} - Uppercase initials (max 2 characters)
+	 */
 	const getInitials = (name: string) => {
-		return name.split(' ').map(n => n[0]).join('').toUpperCase().slice(0, 2)
+		return name
+			.split(' ')
+			.map((n) => n[0])
+			.join('')
+			.toUpperCase()
+			.slice(0, 2)
 	}
 
 	return (
 		<section className="mt-20 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-			{/* Header */}
+			{/* Section header with comment count */}
 			<div className="mb-10">
 				<div className="flex items-center gap-3 mb-2">
 					<MessageCircle className="h-6 w-6 text-indigo-600 dark:text-slate-400" />
@@ -27,10 +40,13 @@ export default function CommentSection({ comments }: CommentSectionProps) {
 						{comments.length}
 					</span>
 				</div>
+				{/* Decorative divider line */}
 				<div className="h-px bg-gradient-to-r from-slate-200 via-slate-300 to-transparent dark:from-slate-700 dark:via-slate-600"></div>
 			</div>
 
+			{/* Conditional rendering based on whether there are comments */}
 			{comments.length === 0 ? (
+				// Empty state when no comments exist
 				<div className="text-center py-16">
 					<div className="inline-flex items-center justify-center w-16 h-16 bg-slate-100 dark:bg-slate-800 rounded-full mb-4">
 						<MessageCircle className="h-8 w-8 text-slate-400" />
@@ -43,15 +59,16 @@ export default function CommentSection({ comments }: CommentSectionProps) {
 					</p>
 				</div>
 			) : (
+				// Comments list when comments exist
 				<div className="space-y-6">
 					{comments.map((comment, index) => (
 						<article key={comment.id} className="group relative">
-							{/* Comment container */}
 							<div className="flex gap-4">
-								{/* Avatar */}
+								{/* Avatar section */}
 								<div className="flex-shrink-0">
 									<Avatar className="h-10 w-10 ring-2 ring-white dark:ring-slate-800 shadow-sm">
 										<AvatarImage src="" alt={comment.name} />
+										{/* Fallback avatar with initials if image not available */}
 										<AvatarFallback className="bg-gradient-to-br from-blue-500 to-purple-600 text-white text-sm font-semibold">
 											{getInitials(comment.email)}
 										</AvatarFallback>
@@ -60,7 +77,7 @@ export default function CommentSection({ comments }: CommentSectionProps) {
 
 								{/* Comment content */}
 								<div className="flex-1 min-w-0 mb-6">
-									{/* Comment header */}
+									{/* Comment header with email and ID */}
 									<div className="flex flex-wrap items-center justify-between gap-2 mb-4">
 										<h3 className="font-semibold text-yellow-900 dark:text-white text-base">
 											{comment.email}
@@ -73,7 +90,7 @@ export default function CommentSection({ comments }: CommentSectionProps) {
 										</div>
 									</div>
 
-									{/* Comment body */}
+									{/* Comment body with hover effects */}
 									<div className="border bg-gray-50/50 hover:bg-gradient-to-r from-blue-50 to-purple-50 dark:bg-slate-800/50 rounded-2xl px-4 py-3 relative group block hover:shadow-lg hover:shadow-indigo-100 hover:border hover:border-indigo-500  hover:bg-indigo-50/50 transition-all duration-500 ease-in-out  hover:-translate-y-1">
 										<h3 className="font-semibold text-slate-900 dark:text-white text-base">
 											{comment?.name}
@@ -82,12 +99,10 @@ export default function CommentSection({ comments }: CommentSectionProps) {
 											{comment?.body}
 										</p>
 									</div>
-
-
 								</div>
 							</div>
 
-							{/* Connecting line for threaded appearance (except last comment) */}
+							{/* Vertical connecting line between comments (except last one) */}
 							{index < comments.length - 1 && (
 								<div className="absolute left-5 top-12 bottom-0 w-px bg-slate-200 dark:bg-slate-700 opacity-30"></div>
 							)}

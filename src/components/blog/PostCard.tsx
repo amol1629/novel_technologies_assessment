@@ -7,7 +7,7 @@ import {
 } from '@/components/ui/hover-card'
 import { truncateText } from '@/lib/utils'
 import { Post, User } from '@/types/blog'
-import { User as UserIcon } from 'lucide-react'
+import { CircleUserRoundIcon as UserIcon } from 'lucide-react'
 import Link from 'next/link'
 
 interface PostCardProps {

@@ -31,7 +31,7 @@ export default function Footer() {
 											href="https://www.linkedin.com/in/amol-rathod-44b4aa230/"
 											target="_blank"
 											rel="noopener noreferrer"
-											className="group p-2 rounded-lg bg-white hover:bg-gray-50 border border-gray-200 shadow-xs hover:shadow-sm transition-all"
+											className="group p-2 rounded-lg bg-white hover:bg-indigo-50 border border-indigo-200 shadow-xs hover:shadow-sm transition-all"
 											aria-label="LinkedIn"
 										>
 											<Linkedin className="h-5 w-5 text-gray-600 group-hover:text-indigo-600 transition-colors" />
@@ -48,7 +48,7 @@ export default function Footer() {
 											href="https://github.com/amol1629/"
 											target="_blank"
 											rel="noopener noreferrer"
-											className="group p-2 rounded-lg bg-white hover:bg-gray-50 border border-gray-200 shadow-xs hover:shadow-sm transition-all"
+											className="group p-2 rounded-lg bg-white hover:bg-slate-100 border border-slate-200 shadow-xs hover:shadow-sm transition-all"
 											aria-label="GitHub"
 										>
 											<Github className="h-5 w-5 text-gray-600 group-hover:text-gray-800 transition-colors" />
@@ -65,7 +65,7 @@ export default function Footer() {
 											href="https://amol-portfolio-website.vercel.app/"
 											target="_blank"
 											rel="noopener noreferrer"
-											className="group p-2 rounded-lg bg-white hover:bg-gray-50 border border-gray-200 shadow-xs hover:shadow-sm transition-all"
+											className="group p-2 rounded-lg bg-white hover:bg-purple-50 border border-purple-200 shadow-xs hover:shadow-sm transition-all"
 											aria-label="Portfolio"
 										>
 											<Globe className="h-5 w-5 text-gray-600 group-hover:text-purple-600 transition-colors" />

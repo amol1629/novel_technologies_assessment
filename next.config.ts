@@ -11,6 +11,12 @@ const nextConfig = {
 				port: '',
 				pathname: '/**',
 			},
+			{
+				protocol: 'https',
+				hostname: 'www.digitalmesh.com',
+				port: '',
+				pathname: '/blog/wp-content/uploads/**',
+			},
 		],
 	},
 	experimental: {
