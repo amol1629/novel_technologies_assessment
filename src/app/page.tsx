@@ -1,11 +1,11 @@
 
 import PostGrid from '@/components/blog/PostGrid'
 import LoadingSpinner from '@/components/common/LoadingSpinner'
-import { getAllPosts } from '@/lib/api'
+import {  getPostsWithUsers } from '@/lib/api'
 import { Suspense } from 'react'
 
 export default async function HomePage() {
-	const posts = await getAllPosts()
+	const posts = await getPostsWithUsers()
 
 	return (
 		<div className="container mx-auto px-4 py-8">

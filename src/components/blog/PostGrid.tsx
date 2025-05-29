@@ -1,8 +1,8 @@
+import { Post, User } from '@/types/blog'
 import PostCard from './PostCard'
-import { Post } from '@/types/blog'
 
 interface PostGridProps {
-	posts: Post[]
+	posts: (Post & { user: User })[]
 }
 
 export default function PostGrid({ posts }: PostGridProps) {

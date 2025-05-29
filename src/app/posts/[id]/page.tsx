@@ -2,7 +2,7 @@ import { notFound } from 'next/navigation'
 import { Suspense } from 'react'
 import PostContent from '@/components/blog/PostContent'
 import CommentSection from '@/components/blog/CommentSection'
-import { getPost, getPostComments, getAllPosts } from '@/lib/api'
+import { getPostWithUser, getPostComments, getAllPosts } from '@/lib/api'
 import type { Metadata } from 'next'
 
 export const dynamic = 'force-dynamic'
@@ -26,13 +26,14 @@ export async function generateMetadata({
 }: PostPageProps): Promise<Metadata> {
 	try {
 		const { id } = await params
-		const post = await getPost(id)
+		const post = await getPostWithUser(id)
 		return {
 			title: `${post.title} | Modern Blog`,
 			description: post.body.substring(0, 160),
 			alternates: {
 				canonical: `/posts/${id}`,
 			},
+			authors: [{ name: post.user.name }],
 		}
 	} catch {
 		return {
@@ -48,7 +49,7 @@ export default async function PostPage({ params }: PostPageProps) {
 		const { id } = await params
 
 		const [post, comments] = await Promise.all([
-			getPost(id),
+			getPostWithUser(id),
 			getPostComments(id),
 		])
 

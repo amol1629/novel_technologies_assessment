@@ -10,7 +10,7 @@ export default function Loading() {
 
 				{/* Loading text */}
 				<div className="space-y-4">
-					<h2 className="text-xl font-semibold text-gray-700">Loading...</h2>
+					<h2 className="text-xl text-center font-semibold text-gray-700">Loading...</h2>
 					<p className="text-gray-600 max-w-md mx-auto">
 						Please wait while we fetch the content for you.
 					</p>
