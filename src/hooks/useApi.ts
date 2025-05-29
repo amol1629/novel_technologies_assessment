@@ -45,7 +45,8 @@ export function useApi<T>(
 		return () => {
 			isMounted = false
 		}
-	}, dependencies)
+	// eslint-disable-next-line react-hooks/exhaustive-deps
+	}, [apiCall, ...dependencies])
 
 	return state
 }
