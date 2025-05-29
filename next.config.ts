@@ -1,7 +1,21 @@
-import type { NextConfig } from "next";
+// This configuration allows Next.js to optimize CSS and load images from picsum.photos
+// The `remotePatterns` option specifies the allowed image sources, enabling Next.js to handle images from external URLs efficiently.
 
-const nextConfig: NextConfig = {
-  /* config options here */
-};
+/** @type {import('next').NextConfig} */
+const nextConfig = {
+	images: {
+		remotePatterns: [
+			{
+				protocol: 'https',
+				hostname: 'picsum.photos',
+				port: '',
+				pathname: '/**',
+			},
+		],
+	},
+	experimental: {
+		optimizeCss: true,
+	},
+}
 
-export default nextConfig;
+module.exports = nextConfig
