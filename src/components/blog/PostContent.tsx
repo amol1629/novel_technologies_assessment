@@ -1,8 +1,8 @@
-import { ArrowLeft, Calendar, User as UserIcon, Mail } from 'lucide-react'
-import Link from 'next/link'
-import { Button } from '@/components/ui/button'
 import { Badge } from '@/components/ui/badge'
-import { Avatar, AvatarFallback } from '@/components/ui/avatar'
+import { Button } from '@/components/ui/button'
+import { ArrowLeft, User as UserIcon } from 'lucide-react'
+import Link from 'next/link'
+
 import { Post, User } from '@/types/blog'
 
 interface PostContentProps {
@@ -10,63 +10,41 @@ interface PostContentProps {
 }
 
 export default function PostContent({ post }: PostContentProps) {
-	const userInitials = post.user.name
-		.split(' ')
-		.map((n) => n[0])
-		.join('')
-		.toUpperCase()
-		.slice(0, 2)
-
 	return (
-		<div className="animate-fade-in">
-			<div className="mb-6">
+		<div className="">
+			<div className="mb-4">
 				<Link href="/">
-					<Button variant="ghost" className="mb-4">
+					<Button
+						variant="ghost"
+						className="mb-4 text-indigo-700 hover:text-indigo-900 transition-colors"
+					>
 						<ArrowLeft className="h-4 w-4 mr-2" />
 						Back to Posts
 					</Button>
 				</Link>
-
-				<div className="flex items-center space-x-2 mb-4">
-					<Badge variant="secondary">Post #{post.id}</Badge>
-					<div className="flex items-center text-sm text-gray-500">
-						<UserIcon className="h-3 w-3 mr-1" />
-						<span>{post.user.name}</span>
-					</div>
-					<div className="flex items-center text-sm text-gray-500">
-						<Calendar className="h-3 w-3 mr-1" />
-						<span>Recently published</span>
-					</div>
-				</div>
 			</div>
 
-			<header className="mb-8">
-				<h1 className="text-3xl md:text-4xl font-bold text-gray-900 leading-tight mb-6">
-					{post.title}
-				</h1>
+			<div className="animate-fade-in p-6 md:p-10  mx-auto bg-white/70 dark:bg-white/5 backdrop-blur-md rounded-xl shadow-xl hover:-translate-y-1  border border-gray-200 hover:shadow-lg shadow-indigo-100 group-hover:border-indigo-500 group-hover:bg-indigo-50/50 transition-all duration-500 ease-in-out">
+				<div className="flex items-center justify-between gap-8 mb-4 ">
+					<Badge
+						variant="secondary"
+						className="text-sm px-3 py-1 rounded-full bg-purple-50 text-indigo-700"
+					>
+						Post #{post?.id}
+					</Badge>
 
-				{/* Author information */}
-				<div className="flex items-center space-x-3 p-4 bg-gray-50 rounded-lg">
-					<Avatar className="h-12 w-12">
-						<AvatarFallback className="bg-blue-500 text-white font-semibold">
-							{userInitials}
-						</AvatarFallback>
-					</Avatar>
-					<div>
-						<h3 className="font-semibold text-gray-900">{post.user.name}</h3>
-						<p className="text-sm text-gray-500">@{post.user.username}</p>
-						<div className="flex items-center text-xs text-gray-400 mt-1">
-							<Mail className="h-3 w-3 mr-1" />
-							<span>{post.user.email}</span>
-						</div>
+					<div className="flex items-center gap-1.5 pt-2 text-sm text-yellow-800">
+						<UserIcon className="h-3 w-3 " />
+						<span>Posted by {post?.user?.name}</span>
 					</div>
 				</div>
-			</header>
-
-			<div className="prose prose-lg max-w-none">
-				<div className="text-gray-700 leading-relaxed whitespace-pre-line">
-					{post.body}
+				<div className="my-8">
+					<h1 className="text-2xl font-bold  bg-gradient-to-r from-indigo-600 to-blue-600 bg-clip-text text-transparent group-hover:from-indigo-700 group-hover:to-blue-700 transition-colors duration-300 ">
+						{post?.title}
+					</h1>
 				</div>
+
+				<p className="text-md italic text-gray-500">{post?.body}</p>
 			</div>
 		</div>
 	)
