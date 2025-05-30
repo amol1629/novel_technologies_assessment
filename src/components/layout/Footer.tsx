@@ -12,7 +12,7 @@ export default function Footer() {
 		<footer className="bg-gradient-to-b from-gray-50 to-gray-100 border-t border-gray-200 backdrop-blur-sm">
 			<div className="container mx-auto px-4 py-8">
 				<div className="flex flex-col items-center gap-4">
-					{/* Name and social links */}
+					{/* Name */}
 					<div className="flex flex-col sm:flex-row items-center gap-4">
 						<p className="text-gray-700 font-medium tracking-wide text-sm sm:text-base">
 							Crafted by{' '}
@@ -23,6 +23,7 @@ export default function Footer() {
 
 						<div className="hidden sm:block h-5 w-px bg-gradient-to-b from-transparent via-gray-300 to-transparent"></div>
 
+						{/* Social Links with Tooltip */}
 						<div className="flex space-x-5">
 							<TooltipProvider delayDuration={100}>
 								<Tooltip>

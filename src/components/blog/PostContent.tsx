@@ -13,6 +13,7 @@ export default function PostContent({ post }: PostContentProps) {
 	return (
 		<div className="">
 			<div className="mb-4">
+				{/* Back to posts button */}
 				<Link href="/">
 					<Button
 						variant="ghost"
@@ -25,6 +26,8 @@ export default function PostContent({ post }: PostContentProps) {
 			</div>
 
 			<div className="animate-fade-in p-6 md:p-10  mx-auto bg-white/70 dark:bg-white/5 backdrop-blur-md rounded-xl shadow-xl hover:-translate-y-1  border border-gray-200 hover:shadow-lg shadow-indigo-100 group-hover:border-indigo-500 group-hover:bg-indigo-50/50 transition-all duration-500 ease-in-out">
+
+				{/* Post Header with ID and User */}
 				<div className="flex items-center justify-between gap-8 mb-4 ">
 					<Badge
 						variant="secondary"
@@ -38,12 +41,15 @@ export default function PostContent({ post }: PostContentProps) {
 						<span>Posted by {post?.user?.name}</span>
 					</div>
 				</div>
+
+				{/* Post Title */}
 				<div className="my-8">
 					<h1 className="text-2xl font-bold  bg-gradient-to-r from-indigo-600 to-blue-600 bg-clip-text text-transparent group-hover:from-indigo-700 group-hover:to-blue-700 transition-colors duration-300 ">
 						{post?.title}
 					</h1>
 				</div>
 
+				{/* Post Body */}
 				<p className="text-md italic text-gray-700">{post?.body}</p>
 			</div>
 		</div>

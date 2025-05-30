@@ -14,7 +14,7 @@ export default function PostLoading() {
 
 			{/* Post content skeleton */}
 			<div className="animate-pulse p-6 md:p-10 mx-auto bg-white/70 dark:bg-white/5 backdrop-blur-md rounded-xl shadow-xl border border-gray-200">
-				{/* Header with badge and user info */}
+				{/* Header with badge for post id and user name */}
 				<div className="flex items-center justify-between gap-8 mb-4">
 					<Skeleton className="h-6 w-20 rounded-full" />
 					<div className="flex items-center gap-1.5 pt-2">
@@ -23,13 +23,13 @@ export default function PostLoading() {
 					</div>
 				</div>
 
-				{/* Title skeleton */}
+				{/* Post Title skeleton */}
 				<div className="my-8">
 					<Skeleton className="h-8 w-3/4 mb-2" />
 					<Skeleton className="h-8 w-1/2" />
 				</div>
 
-				{/* Body skeleton */}
+				{/* Post Body skeleton */}
 				<div className="space-y-2">
 					<Skeleton className="h-4 w-full" />
 					<Skeleton className="h-4 w-full" />

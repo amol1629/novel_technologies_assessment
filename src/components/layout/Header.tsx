@@ -14,7 +14,6 @@ export default function Header() {
 						>
 							<div className="relative">
 								<BookOpen className="h-5 w-5 sm:h-6 sm:w-6 text-indigo-600 group-hover:text-indigo-700 transition-all duration-300 group-hover:scale-110 group-hover:rotate-4" />
-
 							</div>
 							<div className="relative">
 								<span className="text-lg sm:text-xl font-bold bg-gradient-to-r from-indigo-600 via-purple-600 to-blue-600 bg-clip-text text-transparent group-hover:from-indigo-700 group-hover:via-purple-700 group-hover:to-blue-700 transition-all duration-300">
@@ -22,7 +21,6 @@ export default function Header() {
 								</span>
 								<div className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-indigo-600 to-purple-600 group-hover:w-full transition-all duration-500 ease-out"></div>
 							</div>
-
 						</Link>
 					</div>
 
@@ -36,8 +34,6 @@ export default function Header() {
 						>
 							{/* Animated background overlay */}
 							<div className="absolute inset-0 bg-gradient-to-r from-indigo-600/20 via-purple-600/20 to-blue-600/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-
-
 
 							<Github className="h-4 w-4 sm:h-5 sm:w-5 text-slate-100 group-hover:text-white transition-all duration-300 relative z-10 group-hover:rotate-12" />
 							<span className="text-sm sm:text-base text-slate-100 group-hover:text-white font-medium relative z-10 transition-all duration-300">

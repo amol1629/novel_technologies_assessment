@@ -11,7 +11,7 @@ export const metadata: Metadata = {
 	description:
 		'Discover the latest posts and insights on our modern blog platform',
 	keywords: 'blog, posts, insights, modern, responsive',
-	authors: [{ name: 'Blog Team' }],
+	authors: [{ name: 'Amol Rathod' }],
 	openGraph: {
 		title: 'Modern Blog',
 		description: 'Latest posts and insights',

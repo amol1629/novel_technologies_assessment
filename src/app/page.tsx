@@ -1,13 +1,16 @@
 import PostGrid from '@/components/blog/PostGrid'
-import LoadingSpinner from '@/components/common/LoadingSpinner'
+
 import { getPostsWithUsers } from '@/lib/api'
 import { Suspense } from 'react'
+import Loading from './loading'
 
 export default async function HomePage() {
 	const posts = await getPostsWithUsers()
 
 	return (
 		<div className="container mx-auto px-4 py-8 ">
+
+
 			<div className="text-center mb-12">
 				<h1 className="text-4xl md:text-5xl font-extrabold tracking-tight mb-8 ">
 					<span className="bg-gradient-to-r from-indigo-600 to-blue-500 bg-clip-text text-transparent">
@@ -20,7 +23,7 @@ export default async function HomePage() {
 				</p>
 			</div>
 
-			<Suspense fallback={<LoadingSpinner />}>
+			<Suspense fallback={<Loading />}>
 				<PostGrid posts={posts} />
 			</Suspense>
 		</div>

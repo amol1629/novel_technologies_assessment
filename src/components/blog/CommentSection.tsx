@@ -3,21 +3,11 @@ import { Comment } from '@/types/blog'
 import { MessageCircle } from 'lucide-react'
 
 interface CommentSectionProps {
-	comments: Comment[] // Array of comment objects to display
+	comments: Comment[]
 }
 
-/**
- * CommentSection component - Displays a list of comments with avatars and styling
- * @param {CommentSectionProps} props - Component props
- * @param {Comment[]} props.comments - Array of comment objects to display
- * @returns {JSX.Element} - Rendered comment section
- */
 export default function CommentSection({ comments }: CommentSectionProps) {
-	/**
-	 * Helper function to generate initials from a name or email
-	 * @param {string} name - The name or email to generate initials from
-	 * @returns {string} - Uppercase initials (max 2 characters)
-	 */
+	// Helper function to generate initials from a name or email
 	const getInitials = (name: string) => {
 		return name
 			.split(' ')
@@ -68,7 +58,7 @@ export default function CommentSection({ comments }: CommentSectionProps) {
 								<div className="flex-shrink-0">
 									<Avatar className="h-10 w-10 ring-2 ring-white dark:ring-slate-800 shadow-sm">
 										<AvatarImage src="" alt={comment.name} />
-										{/* Fallback avatar with initials if image not available */}
+
 										<AvatarFallback className="bg-gradient-to-br from-blue-500 to-purple-600 text-white text-sm font-semibold">
 											{getInitials(comment.email)}
 										</AvatarFallback>
@@ -77,7 +67,6 @@ export default function CommentSection({ comments }: CommentSectionProps) {
 
 								{/* Comment content */}
 								<div className="flex-1 min-w-0 mb-6">
-									{/* Comment header with email and ID */}
 									<div className="flex flex-wrap items-center justify-between gap-2 mb-4">
 										<h3 className="font-semibold text-yellow-900 dark:text-white text-base">
 											{comment.email}
@@ -90,7 +79,7 @@ export default function CommentSection({ comments }: CommentSectionProps) {
 										</div>
 									</div>
 
-									{/* Comment body with hover effects */}
+									{/* Comment body  */}
 									<div className="border bg-gray-50/50 hover:bg-gradient-to-r from-blue-50 to-purple-50 dark:bg-slate-800/50 rounded-2xl px-4 py-3 relative group block hover:shadow-lg hover:shadow-indigo-100 hover:border hover:border-indigo-500  hover:bg-indigo-50/50 transition-all duration-500 ease-in-out  hover:-translate-y-1">
 										<h3 className="font-semibold text-slate-900 dark:text-white text-base">
 											{comment?.name}

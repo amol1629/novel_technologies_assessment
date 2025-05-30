@@ -21,6 +21,8 @@ export default function PostCard({ post }: PostCardProps) {
 			className="group block  hover:-translate-y-1 transition-all duration-500 ease-in-out"
 		>
 			<Card className="animate-fade-in p-6  mx-auto hover:bg-gradient-to-r from-blue-50 to-purple-50 dark:bg-slate-800/50 backdrop-blur-md rounded-2xl shadow-xl   h-full border border-gray-200  hover:shadow-lg hover:shadow-indigo-100 group-hover:border-indigo-500 group-hover:bg-indigo-50/50  transition-all duration-500 ease-in-out overflow-hidden">
+
+				{/* Card Header - Post id with username */}
 				<CardHeader className="relative z-10">
 					<div className="flex items-center justify-between pb-3">
 						<Badge
@@ -39,6 +41,7 @@ export default function PostCard({ post }: PostCardProps) {
 					</CardTitle>
 				</CardHeader>
 
+				{/* Card Hover */}
 				<CardContent className="relative z-10">
 					<HoverCard>
 						<HoverCardTrigger asChild>
@@ -46,6 +49,7 @@ export default function PostCard({ post }: PostCardProps) {
 								{truncateText(post.body, 120)}
 							</p>
 						</HoverCardTrigger>
+
 						<HoverCardContent
 							className="w-80 p-4 border border-gray-200 shadow-xl bg-white/95 backdrop-blur-sm"
 							side="top"
