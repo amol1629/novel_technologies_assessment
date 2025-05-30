@@ -16,7 +16,7 @@ Frontend assessment submission for Novel Technology Services. Built with React, 
 ## 📁 Project Structure
 
 ```
-modern-blog/
+ modern-blog/
 ├── .next/                      # Next.js build output
 ├── .git/                       # Git repository
 ├── public/                     # Static assets
@@ -39,6 +39,9 @@ modern-blog/
 │   │   │   ├── card.tsx
 │   │   │   ├── skeleton.tsx
 │   │   │   └── badge.tsx
+│   │   │   └── avatar.tsx
+│   │   │   └── hover-card.tsx
+│   │   │   └── tooltip.tsx
 │   │   ├── layout/             # Layout components
 │   │   │   ├── Header.tsx
 │   │   │   └── Footer.tsx
