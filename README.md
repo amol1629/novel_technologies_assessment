@@ -101,6 +101,9 @@ Reusable, accessible UI primitives following Radix design principles.
 * **`card.tsx`** : Flexible card container with header, content, and footer sections
 * **`skeleton.tsx`** : Loading placeholder component maintaining content dimensions
 * **`badge.tsx`** : Small status indicator component with color variants
+* **`avatar.tsx`** – Avatar component for displaying user images with fallbacks and sizes
+* **`hover-card.tsx`** – Popover-style card that appears on hover, useful for previews
+* **`tooltip.tsx`** – Lightweight tooltip for displaying contextual information on hover/focus
 
 #### `src/components/layout/` - Layout Components
 
@@ -122,9 +125,6 @@ Domain-specific components for blog functionality and content display.
 
 Commonly used components across different sections of the application.
 
-* **`LoadingSpinner.tsx`** : Animated loading indicator with customizable size and color
-* **`ErrorBoundary.tsx`** : React error boundary for graceful error handling and recovery
-
 #### `src/components/common/pagination/` - Pagination System
 
 Complete pagination solution with hooks and components.
@@ -140,7 +140,6 @@ Helper functions and business logic separated from components.
 
 * **`utils.ts`** : Common utility functions, formatters, and helper methods
 * **`api.ts`** : API client configuration, request/response interceptors, and data fetching functions
-* **`constants.ts`** : Application-wide constants, configuration values, and environment variables
 
 #### `src/types/` - TypeScript Definitions
 
@@ -148,13 +147,6 @@ Type safety and interface definitions for the entire application.
 
 * **`blog.ts`** : Blog-related interfaces (Post, Comment, Author, Category)
 * **`api.ts`** : API response types and request payload interfaces
-
-#### `src/hooks/` - Custom React Hooks
-
-Reusable stateful logic encapsulated in custom hooks.
-
-* **`useApi.ts`** : Generic API data fetching hook with loading states and error handling
-* **`useLocalStorage.ts`** : Hook for persistent local storage with JSON serialization
 
 ## 🚦 Getting Started
 
