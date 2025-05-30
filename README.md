@@ -48,8 +48,6 @@ modern-blog/
 │   │   │   ├── PostContent.tsx
 │   │   │   └── CommentSection.tsx
 │   │   └── common/             # Common components
-│   │       ├── LoadingSpinner.tsx
-│   │       ├── ErrorBoundary.tsx
 │   │       └── pagination/     # Pagination components
 │   │           ├── Pagination.tsx
 │   │           └── usePagination.ts
