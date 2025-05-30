@@ -1,15 +1,14 @@
+import Footer from '@/components/layout/Footer'
+import Header from '@/components/layout/Header'
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import './globals.css'
-import Header from '@/components/layout/Header'
-import Footer from '@/components/layout/Footer'
 
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
 	title: 'Modern Blog | Latest Posts & Insights',
-	description:
-		'Discover the latest posts and insights on our modern blog platform',
+	description: 'Discover the latest insights and stories from our community',
 	keywords: 'blog, posts, insights, modern, responsive',
 	authors: [{ name: 'Amol Rathod' }],
 	openGraph: {
